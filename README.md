@@ -14,7 +14,13 @@ git clone https://github.com/kaist-sbml/SecreT.git
 ```
 conda env create -f environment.yml
 conda activate SecreT
+pip install -r requirements.txt
 ```
+
+**Note about Pytorch installation failures**
+If installation fails (often due to CUDA/driver mismatch), please:
+
+Install PyTorch that matches your setup.
 
 ## Example
 * Run SecreT

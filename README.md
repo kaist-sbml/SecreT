@@ -1,2 +1,2 @@
-# SecreT+
-Secretion Transformer for Gram-positive Bacteria
+# SecreT
+Secretion Transformer

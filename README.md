@@ -1,6 +1,6 @@
 # SecreT
 Secretion Transformer
-<<<<<<< HEAD
+
 * Note: This source code was developed in Linux, and has been tested in Ubuntu 16.04 with Python 3.6 and CUDA version 10.1
 
 ## Source

@@ -3,9 +3,6 @@ from pathlib import Path
 import torch
 from SecreT import SecreTransformer, beam_search_with_threshold
 from utils import tokenize_P, untokenize, num_tokens
-import warnings
-
-
 
 def prepare_outdir(base: Path) -> Path:
     """Create a unique output directory.
@@ -34,8 +31,6 @@ def main():
     args = parser.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(device)
-    
     model = SecreTransformer(num_tokens=num_tokens, dim_model=512, num_heads=8, num_encoder_layers=6, num_decoder_layers=6, dropout_p=0.1).to(device)
     model.load_state_dict(torch.load("./model/SecreT+.pt", map_location=device))
 

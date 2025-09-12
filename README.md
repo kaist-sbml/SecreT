@@ -22,7 +22,11 @@ python run_SecreT.py --input input_example.txt --type Sec --outdir output_exampl
 ```
 
 --input: Input txt file (identifier, sequence per line) 
+
 --type: Signal peptide type (one of Sec or Tat)
+
 --temperature: Temperature for decoding. (default: Sec→0.5, Tat→1.5)
+
 --num-beams: Beam width (default: 100)
+
 --outdir: Output directory basename (default: output)

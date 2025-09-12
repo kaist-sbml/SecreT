@@ -1,7 +1,7 @@
 import argparse
 from pathlib import Path
 import torch
-from SecreT_positive import SecreTransformer, beam_search_with_threshold
+from SecreT import SecreTransformer, beam_search_with_threshold
 from utils import tokenize_P, untokenize, num_tokens
 
 def prepare_outdir(base: Path) -> Path:

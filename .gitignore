@@ -1,4 +1,22 @@
+# Python
 __pycache__/
 *.pyc
-output_exmaple/
-output_example/
+.venv/
+.env
+
+# OS / IDE
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Outputs & data
+logs/
+outputs/
+checkpoints/
+data/
+*.log
+
+# Build
+dist/
+build/

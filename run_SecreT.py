@@ -31,6 +31,8 @@ def main():
     args = parser.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"device: {device}")
+    
     model = SecreTransformer(num_tokens=num_tokens, dim_model=512, num_heads=8, num_encoder_layers=6, num_decoder_layers=6, dropout_p=0.1).to(device)
     model.load_state_dict(torch.load("./model/SecreT+.pt", map_location=device))
 

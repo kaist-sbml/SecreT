@@ -17,7 +17,7 @@ conda activate SecreT
 pip install -r requirements.txt
 ```
 
-**Note about Pytorch installation failures**
+**Note about PyTorch installation failures**
 
 If installation fails (often due to CUDA/driver mismatch), please install PyTorch that matches your setup.
 

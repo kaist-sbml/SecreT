@@ -1,5 +1,6 @@
 # SecreT
 Secretion Transformer
+<<<<<<< HEAD
 * Note: This source code was developed in Linux, and has been tested in Ubuntu 16.04 with Python 3.6 and CUDA version 10.1
 
 ## Source
@@ -30,3 +31,4 @@ python run_SecreT.py --input input_example.txt --type Sec --outdir output_exampl
 --num-beams: Beam width (default: 100)
 
 --outdir: Output directory basename (default: output)
+

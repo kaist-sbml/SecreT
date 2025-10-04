@@ -5,12 +5,12 @@ Secretion Transformer
 
 ## Source
 
-1. Clone the repository
+### 1) Clone the repository
 ```
 git clone https://github.com/kaist-sbml/SecreT.git
 ```
 
-2. Create and activate a conoda environment
+### 2) Create and activate a conda environment
 ```
 conda env create -f environment.yml
 conda activate SecreT
@@ -36,4 +36,31 @@ python run_SecreT.py --input input_example.txt --type Sec --outdir output_exampl
 --num-beams: Beam width (default: 100)
 
 --outdir: Output directory basename (default: output)
+
+## Data preparation & preprocessing
+
+This project supports building an SP dataset from UniProt JSON exports and refining it with SignalP 6.0.
+
+### 1) Download data
+- **UniProt**: Download your protein records **in JSON format** (e.g., via UniProt website or API) and place them under a directory (e.g., `Uniprot_download/`).
+- **SignalP 6.0**: Download from https://services.healthtech.dtu.dk/services/SignalP-6.0/ and follow their installation instructions.
+
+### 2) Build SP dataset from UniProt JSON
+Extract signal peptide (SP) and mature protein sequences from UniProt JSON files and save as a single pickle:
+```
+python build_sp_dataset.py --input-dir Uniprot_download --output SP_dataset.pkl
+```
+
+### 3) Filter with SignalP 6.0 and split SP regions
+Keep only Sec/SPI (SP) and Tat/SPI (TAT) where the predicted cleavage site matches the UniProt-derived SP length, and split SP into regions:
+```
+python preprocess_signalp_regions.py --input SP_dataset.pkl --output SP_dataset_processed.pkl
+```
+Output is a pickle list with tuples of:
+
+SP: (identifier, "SP", (n, h, c), mature_sequence)
+
+TAT: (identifier, "TAT", (n, RR, h, c), mature_sequence)
+
+
 

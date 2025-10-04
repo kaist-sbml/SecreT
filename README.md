@@ -63,8 +63,9 @@ python build_sp_dataset.py --input-dir Uniprot_download --output SP_dataset.pkl
 
 We keep only **Sec/SPI (`SP`)** and **Tat/SPI (`TAT`)** where the predicted cleavage site matches the UniProt-derived SP length, and then split the SP into regions:
 
-```bash
+```
 python preprocess_signalp_regions.py --input SP_dataset.pkl --output SP_dataset_processed.pkl
+```
 
 Keep only Sec/SPI (SP) and Tat/SPI (TAT) where the predicted cleavage site matches the UniProt-derived SP length, and split SP into regions:
 ```

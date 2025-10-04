@@ -52,6 +52,20 @@ python build_sp_dataset.py --input-dir Uniprot_download --output SP_dataset.pkl
 ```
 
 ### 3) Filter with SignalP 6.0 and split SP regions
+
+> **Terminology note (to avoid confusion):**  
+> In our manuscript, **“SP”** is used as an abbreviation for the generic term **signal peptide**.  
+> In **SignalP 6.0**, however, the label **`SP`** means **Sec/SPI** specifically. Other secretion types are labeled as:
+> - **Sec/SPII** → `LIPO`
+> - **Tat/SPI** → `TAT`
+> - **Tat/SPII** → `TATLIPO`
+> - **Sec/SPIII** → `PILIN`
+
+We keep only **Sec/SPI (`SP`)** and **Tat/SPI (`TAT`)** where the predicted cleavage site matches the UniProt-derived SP length, and then split the SP into regions:
+
+```bash
+python preprocess_signalp_regions.py --input SP_dataset.pkl --output SP_dataset_processed.pkl
+
 Keep only Sec/SPI (SP) and Tat/SPI (TAT) where the predicted cleavage site matches the UniProt-derived SP length, and split SP into regions:
 ```
 python preprocess_signalp_regions.py --input SP_dataset.pkl --output SP_dataset_processed.pkl

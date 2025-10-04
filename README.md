@@ -67,10 +67,6 @@ We keep only **Sec/SPI (`SP`)** and **Tat/SPI (`TAT`)** where the predicted clea
 python preprocess_signalp_regions.py --input SP_dataset.pkl --output SP_dataset_processed.pkl
 ```
 
-Keep only Sec/SPI (SP) and Tat/SPI (TAT) where the predicted cleavage site matches the UniProt-derived SP length, and split SP into regions:
-```
-python preprocess_signalp_regions.py --input SP_dataset.pkl --output SP_dataset_processed.pkl
-```
 Output is a pickle list with tuples of:
 
 SP: (identifier, "SP", (n, h, c), mature_sequence)
